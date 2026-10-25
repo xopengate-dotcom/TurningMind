@@ -23,23 +23,23 @@ function App() {
     <div className="app">
       <header className="header">
         <h1>TurningMind</h1>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div className="header-right">
           <nav>
             <button
               className={vista === 'manager' ? 'active' : ''}
               onClick={() => setVista('manager')}
             >
-              Dashboard Manager
+              Manager
             </button>
             <button
               className={vista === 'dipendente' ? 'active' : ''}
               onClick={() => setVista('dipendente')}
             >
-              Vista Dipendente
+              Dipendente
             </button>
           </nav>
-          <span style={{ fontSize: '0.9rem' }}>{utente.email}</span>
-          <button onClick={logout} style={{ background: '#ef4444', color: 'white', border: 'none', padding: '0.4rem 0.8rem', borderRadius: 6, cursor: 'pointer' }}>
+          <span className="user-info">{utente.email}</span>
+          <button className="logout-btn" onClick={logout}>
             Esci
           </button>
         </div>
