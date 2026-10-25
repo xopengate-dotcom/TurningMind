@@ -13,7 +13,7 @@ export default function DashboardManager() {
   })
 
   const aggiornaCopertura = (giorno: number, ruolo: Ruolo, valore: number) => {
-    setConfig((prev) => ({
+    setConfig((prev: ConfigurazioneManager) => ({
       ...prev,
       copertura: {
         ...prev.copertura,
@@ -26,8 +26,8 @@ export default function DashboardManager() {
   }
 
   const generaTurni = () => {
-    alert('Qui verrà chiamata la Cloud Function genera_turni con la configurazione corrente.')
-    console.log('Configurazione da inviare:', config)
+    alert('Generazione turni in arrivo')
+    console.log('Configurazione:', config)
   }
 
   return (
@@ -83,7 +83,7 @@ export default function DashboardManager() {
             max={3}
             value={config.regole.maxRuoliPerGiorno}
             onChange={(e) =>
-              setConfig((prev) => ({
+              setConfig((prev: ConfigurazioneManager) => ({
                 ...prev,
                 regole: { ...prev.regole, maxRuoliPerGiorno: Number(e.target.value) },
               }))
